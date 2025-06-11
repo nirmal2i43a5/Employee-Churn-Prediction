@@ -16,10 +16,7 @@ class ModelBuilder:
         self.onehot = onehot
 
     def build_pipeline(self):
-        # Preprocessing for numeric features
-        num_transformer = Pipeline([
-            ("scaler", StandardScaler())
-        ])
+      
 
         # Preprocessing for ordinal features
         ord_transformer = Pipeline([
@@ -32,10 +29,11 @@ class ModelBuilder:
 
         # Combine all transformations
         preprocessor = ColumnTransformer(transformers=[
-            ("num", num_transformer, self.numerical),
             ("ord", ord_transformer, self.ordinal),
             ("ohe", ohe_transformer, self.onehot),
-        ])
+        ],
+        remainder='passthrough'
+        )
 
         # Final pipeline: preprocessing + classifier
         pipeline = Pipeline([
@@ -46,6 +44,7 @@ class ModelBuilder:
         return pipeline
 
 
+    ## Tuning pipeline using GridSearchCV
     def tune_pipeline(self, X_train, y_train):
         
         pipeline = self.build_pipeline()
@@ -66,10 +65,9 @@ class ModelBuilder:
         # Grid search
         rf2_pipeline_grid  = GridSearchCV(pipeline, param_grid, scoring=scoring, refit='roc_auc', cv=4)
         rf2_pipeline_grid.fit(X_train, y_train)
+        print("Best parameters found: ", rf2_pipeline_grid.best_params_)
+        print("Best score found: ", rf2_pipeline_grid.best_score_)
 
         return rf2_pipeline_grid.best_estimator_, rf2_pipeline_grid.best_params_
 
-
-def save_pipeline(pipeline):
-    joblib.dump(pipeline, "rf2_pipeline.pkl")
 
