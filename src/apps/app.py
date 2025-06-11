@@ -8,6 +8,7 @@ from predict import predict_form
 from eda import show_eda
 
 
+
 def main():
     
     df = load_data()
