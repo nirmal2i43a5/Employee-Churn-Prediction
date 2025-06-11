@@ -21,16 +21,15 @@ This project includes EDA, feature engineering, data leakage prevention, pipelin
 ## Folder Structure
 
 ```
-.
-├── app.py                  # Streamlit app entry point
-├── pipeline.py             # Pipeline + tuning logic
-├── predict.py              # Churn prediction form logic
-├── eda.py                  # EDA visualizations
-├── utils.py                # Load data and model
-├── models/                 # Serialized model pipeline
-├── data/                   # Processed dataset
-├── notebooks/              # Jupyter notebooks (EDA + modeling)
-└── README.md
+─ data/                   # Processed dataset
+─ models/                 # Serialized model pipeline
+─ notebooks/              # Jupyter notebooks (EDA + modeling)
+─ src/apps/app.py                  # Streamlit app entry point
+─ src/pipeline.py             # Pipeline + tuning logic
+─ src/apps/predict.py              # Churn prediction form logic
+─ src/apps/eda.py                  # EDA visualizations
+─ src/apps/utils.py                # Load data and model
+─ README.md
 ```
 
 ## Setup Instructions
@@ -61,17 +60,27 @@ streamlit run app.py
 - All employees with 7 projects or >250 monthly hours had left — signs of overload.
 - Feature `satisfaction_level` was dropped to prevent data leakage.
 - Introduced `overworked` as a production-safe binary feature.
-- High recall (91.2%) indicates strong identification of at-risk employees.
+- High recall (90.36%) indicates strong identification of at-risk employees.
 
-## Model Metrics (Final Random Forest)
+## Model Metrics for Best Selected Model(Random Forest)
 
-| Metric    | Score |
-| --------- | ----- |
-| Accuracy  | 96.5% |
-| Precision | 88.0% |
-| Recall    | 91.2% |
-| F1 Score  | 89.6% |
-| ROC-AUC   | 0.94  |
+| Metric    | Score  |
+| --------- | ------ |
+| Accuracy  | 96.2%  |
+| Precision | 87%    |
+| Recall    | 90.36% |
+| F1 Score  | 88.67% |
+| ROC-AUC   | 93.84% |
+
+**Best Model:** The Random Forest model demonstrated the strongest performance.
+
+**Key Metrics:**
+
+- AUC: 93.8%  - This indicates an excellent ability to distinguish between employees who will leave and those who will stay.
+- Precision: 87.0%  - This shows when the model predicts an employee will leave, it's correct around 87% (or more) of the time.
+- Recall: 90.36%  - The model successfully identifies about 90% (or more) of employees who actually end up leaving.
+- F1-Score: 88.7%  - This shows a strong balance between precision and recall.
+- Accuracy: 96.2% .Overall, the model makes correct predictions (leave/stay) for a very high percentage of employees.
 
 ## Purpose
 
