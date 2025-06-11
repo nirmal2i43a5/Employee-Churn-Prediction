@@ -13,3 +13,9 @@ def load_data():
 def load_pipeline():
     pipeline = joblib.load('models/rf2_pipeline.pkl')
     return pipeline
+
+
+@st.cache_resource
+def load_model():
+    model = joblib.load('models/hr_rf2.pickle')
+    return model
