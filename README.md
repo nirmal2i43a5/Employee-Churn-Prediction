@@ -12,7 +12,7 @@ This project includes EDA, feature engineering, data leakage prevention, pipelin
 ## Project Highlights
 
 - **Model:** Tuned Random Forest Classifier
-- **Performance:** AUC = 0.94 | Accuracy = 96.5% | F1 Score = 89.6%
+- **Performance:** AUC = 93.8% | Accuracy = 96.2% | F1 Score = 88.67% | Recall = 90.36 %
 - **EDA:** Identified key attrition drivers — project overload, overwork, low satisfaction
 - **Feature Engineering:** Created `overworked` flag; removed leakage-prone features
 - **ML Pipeline:** Used `Pipeline`, `ColumnTransformer`, and `GridSearchCV`
@@ -24,11 +24,11 @@ This project includes EDA, feature engineering, data leakage prevention, pipelin
 ─ data/                   # Processed dataset
 ─ models/                 # Serialized model pipeline
 ─ notebooks/              # Jupyter notebooks (EDA + modeling)
-─ src/apps/app.py                  # Streamlit app entry point
-─ src/pipeline.py             # Pipeline + tuning logic
-─ src/apps/predict.py              # Churn prediction form logic
-─ src/apps/eda.py                  # EDA visualizations
-─ src/apps/utils.py                # Load data and model
+─ src/apps/app.py         # Streamlit app entry point
+─ src/pipeline.py         # Pipeline + tuning logic
+─ src/apps/predict.py     # Churn prediction form logic
+─ src/apps/eda.py         # EDA visualizations
+─ src/apps/utils.py       # Load data and model
 ─ README.md
 ```
 
@@ -55,13 +55,6 @@ streamlit run app.py
 
 ---
 
-## Key Insights
-
-- All employees with 7 projects or >250 monthly hours had left — signs of overload.
-- Feature `satisfaction_level` was dropped to prevent data leakage.
-- Introduced `overworked` as a production-safe binary feature.
-- High recall (90.36%) indicates strong identification of at-risk employees.
-
 ## Model Metrics for Best Selected Model(Random Forest)
 
 | Metric    | Score  |
@@ -78,9 +71,19 @@ streamlit run app.py
 
 - AUC: 93.8%  - This indicates an excellent ability to distinguish between employees who will leave and those who will stay.
 - Precision: 87.0%  - This shows when the model predicts an employee will leave, it's correct around 87% (or more) of the time.
-- Recall: 90.36%  - The model successfully identifies about 90% (or more) of employees who actually end up leaving.
+- Recall: 90.36%  - The model successfully identifies about 90% (or more) of employees who actually end up leaving and also shows strong identification of at-risk employees.
 - F1-Score: 88.7%  - This shows a strong balance between precision and recall.
 - Accuracy: 96.2% .Overall, the model makes correct predictions (leave/stay) for a very high percentage of employees.
+
+## Summary of model results
+
+**Logistic Regression**
+
+The logistic regression model achieved precision of 80%, recall of 83%, f1-score of 80% (all weighted averages), and accuracy of 83%, on the test set.
+
+**Tree-based Machine Learning**
+
+After conducting feature engineering, the decision tree model achieved AUC of 93.8%, precision of 87.0%, recall of 90.4%, f1-score of 88.7%, and accuracy of 96.2%, on the test set. The random forest modestly outperformed the decision tree model.
 
 ## Purpose
 
