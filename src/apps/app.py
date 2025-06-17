@@ -2,10 +2,16 @@ import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
+import sys
+import pathlib
 
-from utils import load_data, load_pipeline
-from predict import predict_form
-from eda import show_eda
+# Adding project root or src directory to sys.path
+sys.path.append(str(pathlib.Path(__file__).parents[1]))
+
+
+from apps.utils import load_data, load_pipeline
+from apps.predict import predict_form
+from apps.eda import show_eda
 
 
 
