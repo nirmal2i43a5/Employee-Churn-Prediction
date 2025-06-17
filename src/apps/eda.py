@@ -6,7 +6,7 @@ import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 
 def show_eda(df, filtered_df):
-    st.subheader("Visual HR Analysis")
+    st.subheader("Employee Churn Analysis Dashboard")
     tab1, tab2, tab3, tab4, tab5 = st.tabs([
         "Stayed/Left by Dept", 
         "Satisfaction Trend", 
