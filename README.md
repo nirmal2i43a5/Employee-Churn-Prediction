@@ -1,8 +1,7 @@
-Employee Churn Prediction with Machine Learning
+# Employee Churn Prediction with Machine Learning
 
 - This project uses machine learning to predict whether an employee will leave the company based on HR records.
 - It includes complete data exploration, preprocessing, feature engineering, model selection, evaluation, and deployment using a Streamlit web app.
-
 
 ## Demo
 
@@ -16,26 +15,15 @@ Or try the live app 👉 [Streamlit Cloud Link](https://employee-churn-predictio
 - Provide actionable, data-driven insights to improve retention.
 - Build a **reliable**, **interpretable**, and **production-ready** ML system using scikit-learn pipelines and Streamlit.
 
-## Key EDA Insights
+## Project Highlights
 
-- **Overwork/projects seems to a major attrition signal**: Employees with 6+ projects or >250 monthly hours had high leave rates.
-- **Satisfaction levels and tenure** show a strong relationship with leaving.
-- **Promotion history** and **salary level** showed weaker, but still relevant, patterns.
-- A new binary feature **`overworked`** was introduced.
-
-## Modeling & Pipeline
-
-### Models Used:
-
-- Logistic Regression (baseline Model)
-- Decision Tree Classifier
-- Random Forest Classifier (**best performer**)
-
-### Pipeline Design:
-
-- Used `Pipeline` and `ColumnTransformer` for clean, modular ML design.
-- Tuned using `GridSearchCV` with multiple metrics:
-  `accuracy`, `precision`, `recall`, `f1`, and `roc_auc`.
+- **Best Model:** Tuned Random Forest Classifier
+- **Performance:** AUC = 93.8% | Accuracy = 96.2% | F1 Score = 88.67% | Recall = 90.36 %
+- **EDA:** Identified key attrition drivers such as  project overload, overwork, tenure, number of projects
+- **Feature Engineering:** Introduced a binary **`overworked`** feature: employees working >175 hours/month.
+- **Data Leakage Prevention:** Removed `satisfaction_level` and `average_monthly_hours`(as these may reflect post-decision bias in the company).
+- **ML Pipeline/Tuning:** Used `Pipeline`, `ColumnTransformer`, and `GridSearchCV`
+- **Deployment:** Interactive Streamlit app for real-time risk prediction and analysis
 
 ## Folder Structure
 
@@ -103,13 +91,3 @@ The logistic regression model achieved precision of 80%, recall of 83%, f1-score
 **Tree-based Machine Learning**
 
 After conducting feature engineering, the decision tree model achieved AUC of 93.8%, precision of 87.0%, recall of 90.4%, f1-score of 88.7%, and accuracy of 96.2%, on the test set. The random forest modestly outperformed the decision tree model.
-
-
-## Project Highlights
-
-- **Model:** Tuned Random Forest Classifier
-- **Performance:** AUC = 93.8% | Accuracy = 96.2% | F1 Score = 88.67% | Recall = 90.36 %
-- **EDA:** Identified key attrition drivers — project overload, overwork, low satisfaction
-- **Feature Engineering:** Created `overworked` flag; removed leakage-prone features
-- **ML Pipeline:** Used `Pipeline`, `ColumnTransformer`, and `GridSearchCV`
-- **Deployment:** Interactive Streamlit app for real-time risk prediction and analysis
