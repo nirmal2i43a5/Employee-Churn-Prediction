@@ -5,6 +5,8 @@
 
 ## Demo
 
+![1750133916802](image/README/1750133916802.gif)
+
 Or try the live app 👉 [Streamlit Cloud Link](https://employee-churn-prediction.streamlit.app)
 
 ## **Understand the business scenario and problem**
