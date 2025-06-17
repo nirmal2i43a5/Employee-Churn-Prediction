@@ -5,7 +5,7 @@
 
 ## Demo
 
-![1750133916802](image/README/1750133916802.gif)
+![hr-churn-prediction](https://github.com/user-attachments/assets/83961abb-286b-4d3d-84a6-b6b0d4c10189)
 
 Or try the live app 👉 [Streamlit Cloud Link](https://employee-churn-prediction.streamlit.app)
 
