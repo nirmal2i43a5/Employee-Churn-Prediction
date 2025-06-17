@@ -26,7 +26,7 @@ def main():
         "Tenure (Years)", 1, 10, (2, 6)
     )
     overworked_only = st.sidebar.checkbox(
-        "Overworked Only (Hours > 250)", value=False
+        "Overworked Only (Hours > 175)", value=False
     )
     department_filter = st.sidebar.multiselect(
         "Department", df['department'].unique()
@@ -39,14 +39,16 @@ def main():
     filtered_df = df[
         (df['satisfaction_level'] >= satisfaction_range[0]) &
         (df['satisfaction_level'] <= satisfaction_range[1]) &
+        
         (df['number_project'] >= project_range[0]) &
         (df['number_project'] <= project_range[1]) &
+        
         (df['tenure'] >= tenure_range[0]) &
         (df['tenure'] <= tenure_range[1])
     ]
 
     if overworked_only:
-        filtered_df = filtered_df[filtered_df['average_monthly_hours'] > 250]
+        filtered_df = filtered_df[filtered_df['average_monthly_hours'] > 175]
 
     if department_filter:
         filtered_df = filtered_df[filtered_df['department'].isin(department_filter)]
@@ -56,8 +58,11 @@ def main():
 
     # Key Metrics
     st.subheader(" Key Insights")
+    # prediction_probability = pipeline.predict_proba(filtered_df)[0][1]
     col1, col2, col3 = st.columns(3)
-    col1.metric("Attrition Rate", f"{filtered_df['left'].mean() * 100:.2f}%")
+    # col1.metric("Avg Attrition Rate", f"{prediction_probability} * 100%")
+    col1.metric("Avg Attrition Rate", f"{filtered_df['left'].mean() * 100:.2f}%")
+    
     col2.metric("Avg Satisfaction", f"{filtered_df['satisfaction_level'].mean():.2f}")
     col3.metric("Top Risk Dept.", filtered_df.groupby('department')['left'].mean().idxmax())
 
