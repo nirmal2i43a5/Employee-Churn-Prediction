@@ -3,7 +3,7 @@ import sys
 import pathlib
 
 # Adding project root or src directory to sys.path
-sys.path.append(str(pathlib.Path(__file__)).parent.parent)
+# sys.path.append(str(pathlib.Path(__file__)).parent.parent)
 
 
 from src.apps.utils import load_data, load_pipeline
