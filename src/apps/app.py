@@ -3,12 +3,12 @@ import sys
 import pathlib
 
 # Adding project root or src directory to sys.path
-sys.path.append(str(pathlib.Path(__file__).parents[1]))
+# sys.path.append(str(pathlib.Path(__file__)).parent.parent)
 
 
-from apps.utils import load_data, load_pipeline
-from apps.predict import predict_form
-from apps.eda import show_eda
+from src.apps.utils import load_data, load_pipeline
+from src.apps.predict import predict_form
+from src.apps.eda import show_eda
 
 
 
