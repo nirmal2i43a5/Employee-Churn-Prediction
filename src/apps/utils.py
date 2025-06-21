@@ -12,9 +12,10 @@ def load_data():
 
 @st.cache_resource
 def load_pipeline():
-    with open('models/rf2_pipeline.pkl', 'rb') as f:
-        pipeline = pickle.load(f)
-    return pipeline
+    return joblib.load('models/rf2_pipeline.pkl')
+    # with open('models/rf2_pipeline.pkl', 'rb') as f:
+    #     return pickle.load(f) # returning pipeline object
+    
 
 
 @st.cache_resource
