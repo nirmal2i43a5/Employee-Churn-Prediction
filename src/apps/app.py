@@ -15,7 +15,7 @@ from eda import show_eda
 def main():
     
     df = load_data()
-    pipeline = load_pipeline()
+    model  = load_pipeline()
 
     # Sidebar Filters
     st.sidebar.header("Filter Employees by Key Features")
@@ -71,7 +71,7 @@ def main():
 
 
     show_eda(df, filtered_df)
-    predict_form(df, pipeline)
+    predict_form(df, model)
 
 
 if __name__ == "__main__":

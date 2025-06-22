@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 
-def predict_form(df, pipeline):
+def predict_form(df, model):#model pipeline 
     
     st.subheader("Predict Attrition")
     
@@ -34,8 +34,8 @@ def predict_form(df, pipeline):
             input_df = pd.DataFrame([input_data])
 
    
-            prediction_probability = pipeline.predict_proba(input_df)[0][1]
-            prediction = pipeline.predict(input_df)[0]
+            prediction_probability = model.predict_proba(input_df)[0][1]
+            prediction = model.predict(input_df)[0]
             
             st.success(f"Probability of Leaving: {prediction_probability:.2%}")
 
