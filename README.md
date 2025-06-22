@@ -1,7 +1,7 @@
 # Employee Churn Prediction with Machine Learning
 
 - This project uses machine learning to predict whether an employee will leave the company based on HR records.
-- It includes complete data exploration, preprocessing, feature engineering, model selection, evaluation, and deployment using a Streamlit web app.
+- It includes complete data exploration, preprocessing, feature engineering, Building pipelines,  Model selection & hyperparameter tuning, data leakage prevention ,  evaluation, and deployment using a Streamlit web app.
 
 ## Demo
 
