@@ -7,7 +7,7 @@
 
 ![hr-churn-prediction](https://github.com/user-attachments/assets/83961abb-286b-4d3d-84a6-b6b0d4c10189)
 
-Or try the live app 👉 [Streamlit Cloud Link](https://employee-churn-prediction.streamlit.app)
+Or try the live app 👉 [Streamlit Cloud Link](https://employees-churn-prediction.streamlit.app/)
 
 ## **Understand the business scenario and problem**
 
