@@ -1,6 +1,6 @@
-# ===========================
+
 # Python & Jupyter Notebooks
-# ===========================
+
 notes/
 *.py[cod]
 __pycache__/
@@ -9,9 +9,8 @@ __pycache__/
 
 
 
-# ===========================
 # Virtual Environments
-# ===========================
+
 .venv/
 env/
 venv/
@@ -20,9 +19,8 @@ env.bak/
 venv.bak/
 
 
-# ===========================
+
 # IDE & Editor Directories
-# ===========================
 .idea/
 .vscode/
 *.sublime-project
@@ -31,16 +29,15 @@ venv.bak/
 *.Rhistory
 *.RData
 
-# ===========================
+
 # System Files
-# ===========================
+
 .DS_Store
 Thumbs.db
 ehthumbs.db
 
-# ===========================
+
 # Logs & Temporary Files
-# ===========================
 *.log
 *.bak
 *.swp
@@ -57,9 +54,9 @@ yarn-error.log*
 debug.log
 debug/
 
-# ===========================
+
 # Environment & Credentials
-# ===========================
+
 .env
 .env.*
 *.env
@@ -75,9 +72,15 @@ credentials.json
 *.crt
 *.p12
 
-# ===========================
+
 # Data Version Control (DVC) Files
-# ===========================
+
 .dvc/
 .dvcignore
 .cache/
+
+data/*
+!data/.gitkeep
+
+models/*
+!models/.gitkeep
