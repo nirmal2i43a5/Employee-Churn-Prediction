@@ -32,7 +32,7 @@ Or try the live app => [Streamlit Cloud Link](https://employees-churn-prediction
 ```
 ─ data/                             # Processed dataset
 ─ models/                           # Serialized model pipeline
-─ notebooks/                        # Jupyter notebooks (EDA + modeling)
+─ notebooks                        
       00_data_split.ipyn            # Data loading & initial setup.
       01_EDA_cleaning.ipynb         # Exploratory analysis and data cleaning.
       02_feature_eng_encoding.ipyn  #Feature engineering and encoding.
