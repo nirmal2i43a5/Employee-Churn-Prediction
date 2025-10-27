@@ -33,14 +33,14 @@ Or try the live app => [Streamlit Cloud Link](https://employees-churn-prediction
 ─ data/                             # Processed dataset
 ─ models/                           # Serialized model pipeline
 ─ notebooks                        
-      00_data_split.ipyn            # Data loading & initial setup.
-      01_EDA_cleaning.ipynb         # Exploratory analysis and data cleaning.
-      02_feature_eng_encoding.ipyn  #Feature engineering and encoding.
-      03_baseline.ipyn              # Baseline model.
-      04_tree_models.ipynb          #Decision Tree & Random Forest training/tuning.
-      05_feature_importance_analysis.ipynb   #Feature importance visualizations.
+      00_data_split.ipynb            # Data loading & initial setup.
+      01_EDA_cleaning.ipynb          # Exploratory analysis and data cleaning.
+      02_feature_eng_encoding.ipynb  #Feature engineering and encoding.
+      03_baseline.ipynb              # Baseline model.
+      04_tree_models.ipynb           #Decision Tree & Random Forest training/tuning.
+      05_feature_importance_analysis.ipynb    #Feature importance visualizations.
       06_results_analysis.ipynb               #Model comparison & final evaluation.
-      end_to_end_exp.ipynb              # Contains overall test , exp and analysis 
+      end_to_end_exp.ipynb                    #Contains overall test , exp and analysis 
 ─ src/apps/app.py         # Streamlit app entry point
 ─ src/pipeline.py         # Pipeline + tuning logic
 ─ src/apps/predict.py     # Churn prediction form logic
